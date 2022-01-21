@@ -1,5 +1,7 @@
 # FurToons
-This is an image based technique to stylistically draw fur on characters. The style is heavily influenced by Dr. Seuss' artwork. Here's a sample of output:
+An image based technique to stylistically draw fur on characters. The style is heavily influenced by Dr. Seuss' artwork. This is an implementation of the paper [Art-Based Rendering of Fur, Grass, and Trees](https://web.cs.ucdavis.edu/~ma/SIGGRAPH02/course23/notes/papers/Kowalski99.pdf)  by Kowalski et al., which is also featured on Siggraph '99 Proceeding's cover.
+
+Here's a sample of output:
 
 ![Furry Bear](doc/dynamicFur.png)
 
@@ -36,23 +38,23 @@ Open Terminal, go to the root folder of the project. Run `make`.
 `Main.cc` corresponds to the driver of the code. `Controller.h` has to be included to use the functionality that's being used in `Main.cc`.
 The Controller module is the interface and provides the following functionality:
 
-`loadPly (string s)`
-*A function to load the PLY files.*
+----
+`loadPly (string s)`  
+> *A function to load the PLY files.*  
 `s`: File name of the ply file
-
-`init ()`
-*Function to initiate the rendering sequence. Is a blocking call.*
-
-`setParams (int spread, float density, float length, int rotate, int useTexture)`
-*Sets the fur parameters. Variable names self-explanatory.*
-`spread`: The diffusion of the fur wrt the gradient. range 0 to 254 strict
-`density`: density of fur in the selected area. range 0 to 10 ideal
-`length`: fur length. range 0 to 1 ideal
-`rotate`: rotate the model if original model is not right.
+----
+`init ()`  
+> *Function to initiate the rendering sequence. Is a blocking call.*  
+`setParams (int spread, float density, float length, int rotate, int useTexture)`  
+*Sets the fur parameters. Variable names self-explanatory.*  
+`spread`: The diffusion of the fur wrt the gradient. range 0 to 254 strict  
+`density`: density of fur in the selected area. range 0 to 10 ideal  
+`length`: fur length. range 0 to 1 ideal  
+`rotate`: rotate the model if original model is not right.  
 `useTexture`: uses texture specified by setFur method call. See below.
-
-`setFur (string furImageFile)`
-*Takes the fur image file name as a parameter and loads it. Works only if useTexture in the previous call is 1.*
+----
+`setFur (string furImageFile)`  
+> *Takes the fur image file name as a parameter and loads it. Works only if useTexture in the previous call is 1.*
 
 ## Misc. Notes
 The code has been implemented and tested on Mac OSX and has not been tested on a Linux Machine. However, I believe I have made the code and makefile portable for both Linux and OSX and will probably run on both, with varying functionality. When tested, all functionality proposed in DOC worked on the OSX and only a subset on Ubuntu 14.04.
