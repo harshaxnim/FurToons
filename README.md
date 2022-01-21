@@ -1,13 +1,22 @@
 # FurToons
 This is an image based technique to stylistically draw fur on characters. The style is heavily influenced by Dr. Seuss' artwork. Here's a sample of output:
+
 ![Furry Bear](doc/dynamicFur.png)
+
 The technique works by first creating a "desire map" – parts of the render where it's desirable to place the fur.
+
 ![Desire Map](doc/desire_cache.bmp)
+
 We then create a normal map of the render, to orient the fur.
+
 ![Normal Map](doc/direction_cache.bmp)
+
 Finally, you place the fur based on the desired density. Note how the fur density is dynamically adjusted (compare to the first image above).
+
 ![Before](doc/baldBear.png) ![After](doc/furryBear.png)
+
 The technique is dynamic enough to go beyond Dr. Seuss' style. To demonstrate that, here's a hairy scary spider:
+
 ![Hairy Long Legs](doc/hairySpider.png)
 
 ## Project Structure
